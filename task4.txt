@@ -1,0 +1,140 @@
+1)
+a)
+Anonymous function:
+let numbers = [1, 2, 3, 4, 5];
+// console.log(numbers);
+
+let oddnumbers = function (numbers) {
+    let oddnum = [];
+    for (let number of numbers) {
+        if (number % 2 != 0) {
+            oddnum.push(number);
+        }
+    } 
+    return oddnum;
+}
+console.log(oddnumbers(numbers));
+
+IIFE function:
+
+console.log(((numbers) => {
+    let oddnum = [];
+    for (let number of numbers) {
+        if (number % 2 == 0) {
+            oddnum.push(number);
+        }
+    }
+    return oddnum;
+    
+})(numbers));
+
+b)convert string to title capse
+
+Anonymous function:
+
+let words= function(str)
+{
+    if ((str == null) || (str == ' '))
+    {
+        return false;
+    }
+    else {
+        str = str.toString();
+        console.log(str.replace(/\w\S*/g, function (text)
+        {
+          return text.charAt(0).toUpperCase() + text.substr(1).toLowerCase();
+        }))
+    }
+}
+words('welcome to guvi');
+
+IIFE function:
+
+console.log(((str)=>
+{
+    if ((str == null) || (str == ' '))
+    {
+        return false;
+    }
+    else {
+        str = str.toString();
+        return str.replace(/\w\S*/g, function (text)
+        {
+          return text.charAt(0).toUpperCase() + text.substr(1).toLowerCase();
+        })
+    }
+})('welcome to guvi'));
+
+c)sum of array elements
+
+Anonymous function:
+
+let num = [1, 2, 3, 4, 5,6];
+let sum = 0;
+let sumofno = function (num) {
+    for (let number of num) {
+        sum= sum + number;
+    }
+    console.log(sum);
+}
+sumofno(num);
+
+IIFE function:
+
+let num = [1, 2, 3, 4, 5,6];
+let sum = 0;
+console.log(((num)=> {
+    for (let number of num) {
+        sum= sum + number;
+    }
+    console.log(sum);
+})(num));
+
+2)a)odd numbers
+
+Arrow function:
+let numbers = [1, 2, 3, 4, 5];
+
+let oddnumbers=(numbers)=>{
+
+let oddnum = [];
+    for (let number of numbers) {
+        if (number % 2 != 0) {
+            oddnum.push(number);
+        }
+    } 
+    return oddnum;
+}
+console.log(oddnumbers(numbers));
+ 
+
+b) title capse
+  
+
+let titlecapse=(word)=>{
+ if ((str == null) || (str == ' '))
+    {
+        return false;
+    }
+    else {
+        str = str.toString();
+        console.log(str.replace(/\w\S*/g, function (text)
+        {
+          return text.charAt(0).toUpperCase() + text.substr(1).toLowerCase();
+        }))
+
+}
+titlecapse('welcome');
+
+
+c)sum of all numbers
+
+let num=[1,4,5,6,7];
+let sOfnum=() =>{
+let sum=0;
+for(let i=0;i<num.length;i++){
+  sum=sum+num[i];
+}
+return sum;
+}
+sOfnum(num);
